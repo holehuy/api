@@ -1,0 +1,61 @@
+{
+  "name": "rs-evaluation-system-api",
+  "version": "0.0.1",
+  "description": "API repo for RS Evaluation System",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx standard && npx jest",
+    "migrate:undo:all": "npx sequelize-cli db:migrate:undo:all",
+    "migrate": "npx sequelize-cli db:migrate",
+    "seed": "npx sequelize-cli db:seed:all",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/est-rouge/rs-evaluation-system-api.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://bitbucket.org/est-rouge/rs-evaluation-system-api/issues"
+  },
+  "homepage": "https://bitbucket.org/est-rouge/rs-evaluation-system-api#readme",
+  "dependencies": {
+    "@sentry/node": "^6.13.3",
+    "@sentry/tracing": "^6.13.3",
+    "@slack/webhook": "^6.0.0",
+    "aws-sdk": "^2.1016.0",
+    "axios": "^0.26.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "http-status": "^1.5.0",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "multer": "^1.4.3",
+    "mysql2": "^2.3.2",
+    "nanoid": "^3.1.30",
+    "passport": "^0.5.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.0",
+    "pdf-parse": "^1.1.1",
+    "sequelize": "^6.7.0",
+    "slack": "^11.0.2",
+    "util": "^0.12.4",
+    "winston": "^3.3.3",
+    "yenv": "^3.0.1"
+  },
+  "devDependencies": {
+    "jest": "^27.3.0",
+    "sequelize-cli": "^6.2.0",
+    "standard": "^16.0.4"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}

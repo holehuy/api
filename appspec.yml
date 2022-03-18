@@ -1,0 +1,31 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/app/.tmp
+file_exists_behavior: OVERWRITE
+permissions:
+  - object: /home/app/.tmp
+    owner: app
+    group: app
+    mode: 755
+    pattern: "**"
+    type:
+      - directory
+hooks:
+  BeforeInstall:
+    - location: codedeploy_scripts/before_install.sh
+      timeout: 180
+      runas: root
+  AfterInstall:
+    - location: codedeploy_scripts/after_install.sh
+      timeout: 480
+      runas: app
+  ApplicationStart:
+    - location: codedeploy_scripts/application_start.sh
+      timeout: 60
+      runas: app
+  ValidateService:
+    - location: codedeploy_scripts/validate_service.sh
+      timeout: 180
+      runas: app
